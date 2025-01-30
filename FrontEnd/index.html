@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/estilo.css">
+    <title>Api Coches</title>
+</head>
+
+<body>
+    <h1>Registro de Coches</h1>
+    <div class="formbold-main-wrapper">
+        <div class="formbold-form-wrapper">
+            <form method="POST">
+                <div class="formbold-input-flex">
+                    <div>
+                        <input type="text" name="marca" id="marca" placeholder="Marca" class="formbold-form-input" />
+                        <label for="marca" class="formbold-form-label"> Marca </label>
+                    </div>
+                    <div>
+                        <input type="text" name="modelo" id="modelo" placeholder="Modelo"
+                            class="formbold-form-input" />
+                        <label for="modelo" class="formbold-form-label"> Modelo</label>
+                    </div>
+                </div>
+                <div class="formbold-input-flex">
+                    <div>
+                        <input type="text" name="color" id="color" placeholder="Color"
+                            class="formbold-form-input" />
+                        <label for="color" class="formbold-form-label"> Color </label>
+                    </div>
+                </div>
+
+                <button id="btnRegistrar" class="formbold-btn">
+                    Registrar coche
+                </button>
+            </form>
+        </div>
+    </div>
+    <script src="assets/script.js"></script>
+</body>
+
+</html>
