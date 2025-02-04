@@ -26,7 +26,7 @@ public class CocheController {
 		this.repositorio = repositorio;
 	}
 
-	@CrossOrigin("http://192.168.1.78:5500")
+	@CrossOrigin("http://127.0.0.1:5500")
 	@GetMapping("/api/coches")
 	public List<Coche> obtenerCoche() {
 		return repositorio.findAll();
@@ -34,7 +34,7 @@ public class CocheController {
 	
 	//DIRECCION EN CLASE: "http://127.0.0.1:5500"
 
-	@CrossOrigin("http://192.168.1.78:5500")
+	@CrossOrigin("http://127.0.0.1:5500")
 	@GetMapping("/api/coche/{id}")
 	public ResponseEntity<Coche> obtenerCoche(@PathVariable Long id) {
 		Optional<Coche> opt = repositorio.findById(id);
@@ -45,7 +45,7 @@ public class CocheController {
 		}
 	}
 
-	@CrossOrigin("http://192.168.1.78:5500")
+	@CrossOrigin("http://127.0.0.1:5500")
 	@PostMapping("/api/coches")
 	public ResponseEntity<Coche> guardarCoche(@RequestBody Coche coche) {
 		if (coche.getId() != null) {
@@ -55,7 +55,7 @@ public class CocheController {
 		return ResponseEntity.ok(coche);
 	}
 
-	@CrossOrigin(origins = "http://192.168.1.78:5500", allowedHeaders = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
+	@CrossOrigin(origins = "http://127.0.0.1:5500", allowedHeaders = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
 	@PutMapping("/api/coches/{id}")
 	public ResponseEntity<Coche> actualizarCoche(@RequestBody Coche coche) {
 	    if (coche.getId() == null || !repositorio.existsById(coche.getId())) {
@@ -65,7 +65,7 @@ public class CocheController {
 	    return ResponseEntity.ok(coche);
 	}
 
-	@CrossOrigin("http://192.168.1.78:5500")
+	@CrossOrigin("http://127.0.0.1:5500")
 	@DeleteMapping("/api/coches/{id}")
 	public ResponseEntity<Coche> borrarCoche(@PathVariable Long id) {
 		if (id == null || !repositorio.existsById(id)) {
